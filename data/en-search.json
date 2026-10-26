@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "language": "en",
+  "entries": [
+    {
+      "id": "home",
+      "title": "Software Projects & Engineering Decisions",
+      "description": "I'm a Computer Science student working with Java, C#, JavaScript and TypeScript. My personal projects focus on automation, requirements, software testing and AI-assisted development.",
+      "technologies": ["Java", "C#", "JavaScript", "TypeScript", "SQL", "HTML/CSS", "Git", "Linux CLI"],
+      "headings": [
+        { "id": "work", "title": "Selected projects" },
+        { "id": "about", "title": "About" },
+        { "id": "technologies-about", "title": "Technologies" },
+        { "id": "contact", "title": "Contact" }
+      ],
+      "url": "../en/index.html"
+    },
+    {
+      "id": "digital-core",
+      "title": "Digital Core",
+      "description": "A plugin-based system that automates order handling for a small digital-goods shop on an online marketplace: paid orders, delivery from stock and purchases from external suppliers, with recovery when events are missed.",
+      "technologies": ["Python", "pytest", "Telegram bot"],
+      "headings": [
+        { "id": "overview", "title": "Overview" },
+        { "id": "architecture", "title": "Architecture" },
+        { "id": "technologies", "title": "Technologies" },
+        { "id": "contribution", "title": "My Contribution" },
+        { "id": "results", "title": "Results" }
+      ],
+      "url": "../en/projects/digital-core.html"
+    },
+    {
+      "id": "novaplatform",
+      "title": "NovaPlatform",
+      "description": "A full-stack web store for digital goods: a Java/Spring Boot backend serving a plain-JavaScript storefront, customer accounts through Supabase, admin panels and transactional email. Built with AI-assisted implementation.",
+      "technologies": ["Java 21", "Spring Boot", "JavaScript", "Supabase", "PostgreSQL", "Docker"],
+      "headings": [
+        { "id": "overview", "title": "Overview" },
+        { "id": "architecture", "title": "Architecture" },
+        { "id": "technologies", "title": "Technologies" },
+        { "id": "contribution", "title": "My Contribution" },
+        { "id": "results", "title": "Results" }
+      ],
+      "url": "../en/projects/novaplatform.html"
+    }
+  ]
+}

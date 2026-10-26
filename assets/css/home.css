@@ -1,0 +1,214 @@
+/* Home page: hero, project cards, About and Contact. */
+
+/* Home: hero */
+
+.hero {
+  padding-block: var(--section-gap) 0;
+}
+
+.hero__text {
+  max-width: 720px;
+}
+
+/* Text on the left, the technology illustration on the right from 1024px */
+.hero .container {
+  display: grid;
+  align-items: center;
+  gap: 32px;
+}
+
+/* The stage holds the illustration and its pause button; hidden below 1024px. */
+.hero .hero__stage {
+  display: none;
+  width: 100%;
+  max-width: 620px;
+  justify-self: end;
+}
+
+.hero .hero__art {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .hero .container {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  }
+
+  .hero .hero__stage {
+    display: block;
+  }
+}
+
+.hx-orbit {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.4;
+  stroke-dasharray: 4 6;
+  opacity: 0.7;
+}
+
+.hx-orbit--inner {
+  opacity: 0.4;
+}
+
+/* The hero column renders the 700-unit drawing at about 520px: keep labels readable (~14px). */
+.hero__art .hx-tech {
+  font-size: 19px;
+}
+
+.hero__art .hx-mono {
+  font-size: 24px;
+}
+
+.hx-tech {
+  fill: var(--text);
+  font: 600 15px var(--font-mono);
+  paint-order: stroke;
+  stroke: var(--bg);
+  stroke-width: 4px;
+}
+
+.hx-mono {
+  fill: var(--accent);
+  font: 800 22px var(--font-sans);
+  letter-spacing: -0.03em;
+  paint-order: stroke;
+  stroke: var(--bg);
+  stroke-width: 2px;
+  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--accent) 70%, transparent));
+}
+
+.hero__summary {
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: 1.06em;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 0;
+}
+
+/* Home: work cards — both cards always visible, no carousel */
+
+.cards {
+  display: grid;
+  gap: 24px;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--card-pad);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+/* Card cover frame */
+
+.card__visual {
+  position: relative;
+  height: 156px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 70% 40%, color-mix(in srgb, var(--accent) 28%, transparent), transparent 62%),
+    repeating-linear-gradient(0deg, color-mix(in srgb, var(--border) 18%, transparent) 0 1px, transparent 1px 22px),
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--border) 18%, transparent) 0 1px, transparent 1px 22px),
+    var(--bg);
+}
+
+.card__index {
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.card__link {
+  gap: 10px;
+}
+
+.card__arrow {
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  transition: transform var(--t-hover) ease;
+}
+
+.card__link:hover .card__arrow {
+  transform: translateX(4px);
+}
+
+.card__title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.card__title a:hover {
+  color: var(--accent);
+}
+
+.card__summary {
+  color: var(--muted);
+}
+
+.card .tags {
+  margin-bottom: 16px;
+}
+
+.card__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: auto;
+  align-self: flex-start;
+  font-weight: 700;
+}
+
+/* Home: about */
+
+.about__grid {
+  display: grid;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+@media (min-width: 768px) {
+  .about__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.interests {
+  padding-inline-start: 20px;
+  color: var(--muted);
+}
+
+.interests li + li {
+  margin-top: 8px;
+}
+
+/* Home: contact */
+
+.contact__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+}

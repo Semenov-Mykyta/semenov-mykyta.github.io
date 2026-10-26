@@ -1,0 +1,41 @@
+/* Root page and 404. */
+
+/* Root page and 404 */
+
+.entry {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.entry main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.entry main > .container {
+  padding-block: var(--section-gap);
+}
+
+.entry h1 {
+  max-width: 720px;
+}
+
+.entry__intro {
+  max-width: 60ch;
+  color: var(--muted);
+}
+
+.entry__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+  list-style: none;
+}
+
+.entry__sep {
+  color: var(--muted);
+  font-weight: 400;
+}

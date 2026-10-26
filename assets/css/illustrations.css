@@ -1,0 +1,164 @@
+/* Isometric SVG illustrations: shared shapes, intro animation, card covers, continuous hero motion and its pause button. */
+
+/* Project illustrations (original isometric SVGs, decorative, theme-aware) */
+
+.case-hero__art {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .case-hero__art {
+    display: block;
+  }
+}
+
+.hx {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.hx-s1 { stop-color: var(--accent); stop-opacity: 0.22; }
+.hx-s2 { stop-color: var(--surface); stop-opacity: 1; }
+.hx-s3 { stop-color: var(--accent); stop-opacity: 0.9; }
+.hx-s4 { stop-color: var(--accent); stop-opacity: 0.05; }
+.hx-s5 { stop-color: var(--accent); stop-opacity: 0.35; }
+.hx-s6 { stop-color: var(--accent); stop-opacity: 0; }
+.hx-t { stroke: var(--accent); stroke-width: 1.6; }
+.hx-l { fill: color-mix(in srgb, var(--accent) 16%, var(--bg)); stroke: color-mix(in srgb, var(--accent) 60%, transparent); stroke-width: 1; }
+.hx-r { fill: color-mix(in srgb, var(--accent) 7%, var(--bg)); stroke: color-mix(in srgb, var(--accent) 60%, transparent); stroke-width: 1; }
+.hx-edge { fill: none; stroke: var(--accent); stroke-width: 7; opacity: 0.5; }
+.hx-inner { fill: none; stroke: color-mix(in srgb, var(--accent) 35%, transparent); stroke-width: 1; stroke-dasharray: 2 5; }
+.hx-bt { fill: color-mix(in srgb, var(--accent) 22%, var(--surface)); stroke: var(--accent); stroke-width: 1; }
+.hx-bl { fill: color-mix(in srgb, var(--accent) 12%, var(--bg)); stroke: color-mix(in srgb, var(--accent) 50%, transparent); stroke-width: 0.8; }
+.hx-br { fill: var(--bg); stroke: color-mix(in srgb, var(--accent) 50%, transparent); stroke-width: 0.8; }
+.hx-led { fill: var(--accent); opacity: 0.85; filter: drop-shadow(0 0 4px var(--accent)); }
+.hx-trace { fill: none; stroke: var(--accent); stroke-width: 1.4; opacity: 0.75; }
+.hx-node { fill: var(--accent); filter: drop-shadow(0 0 3px var(--accent)); }
+.hx-dot2 { fill: var(--border); }
+.hx-win { fill: color-mix(in srgb, var(--accent) 10%, var(--bg)); stroke: var(--accent); stroke-width: 1.2; }
+.hx-winbar { fill: color-mix(in srgb, var(--accent) 20%, var(--surface)); }
+.hx-ring { fill: none; stroke: color-mix(in srgb, var(--accent) 70%, transparent); stroke-width: 1.2; }
+.hx-leader { fill: none; stroke: var(--border); stroke-width: 1; stroke-dasharray: 3 4; }
+.hx-dot { fill: var(--accent); }
+.hx-label { fill: var(--muted); font: 400 16px var(--font-sans); }
+.hx-spark { fill: var(--accent); opacity: 0.45; }
+
+/* One intro animation (~1.8 s); nothing with reduced motion. */
+.motion-ok .hx-layer { animation: hx-rise 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both; animation-delay: calc((3 - var(--i)) * 140ms); }
+.motion-ok .hx-block { transform-box: fill-box; transform-origin: bottom; animation: hx-grow 600ms cubic-bezier(0.2, 0.7, 0.2, 1) both; animation-delay: 650ms; }
+.motion-ok .hx-tag { animation: hx-fade 450ms ease both; animation-delay: calc(900ms + var(--i) * 90ms); }
+.motion-ok .hx-beam,
+.motion-ok .hx-spark,
+.motion-ok .hx-floor { animation: hx-fade 800ms ease both; animation-delay: 500ms; }
+
+@keyframes hx-rise { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
+@keyframes hx-grow { from { opacity: 0; transform: scaleY(0.2); } to { opacity: 1; transform: none; } }
+@keyframes hx-fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---------- Card covers, continuous hero motion and its pause button ---------- */
+
+/* Card covers: original decorative SVGs (aria-hidden), coloured by the theme tokens */
+.card__visual--art svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.cover .hx-t { fill: color-mix(in srgb, var(--accent) 9%, var(--surface)); stroke-width: 1.2; }
+.hx-side { fill: color-mix(in srgb, var(--accent) 22%, transparent); }
+.hx-ln { fill: color-mix(in srgb, var(--text) 30%, transparent); }
+.hx-ln--2 { fill: color-mix(in srgb, var(--text) 16%, transparent); }
+.hx-btn { fill: color-mix(in srgb, var(--accent) 55%, transparent); }
+.hx-scan { fill: var(--accent); opacity: 0; }
+.hx-tog { fill: color-mix(in srgb, var(--border) 45%, transparent); }
+.hx-tog.is-on { fill: color-mix(in srgb, var(--accent) 70%, transparent); }
+.hx-env { fill: none; stroke: var(--accent); stroke-width: 1.4; stroke-linejoin: round; }
+.hx-check { fill: none; stroke: var(--accent); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 3px var(--accent)); }
+.hx-loop { fill: none; stroke: color-mix(in srgb, var(--accent) 55%, transparent); stroke-width: 1.3; stroke-dasharray: 3 5; }
+.hx-loop-head { fill: none; stroke: color-mix(in srgb, var(--accent) 70%, transparent); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.hx-ring0 { fill: none; stroke: var(--accent); stroke-width: 1.2; opacity: 0.35; }
+.hx-emit { fill: none; stroke: var(--accent); stroke-width: 1.2; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.hx-disk { stroke-width: 1.1; }
+.hx-db .hx-bl { stroke-width: 1; }
+.hx-cap { fill: var(--muted); font: 500 15px var(--font-sans); }
+.hx-cap--em { fill: color-mix(in srgb, var(--accent) 80%, var(--muted)); font-style: italic; font-size: 13px; }
+
+@media (max-width: 559px) {
+  .cover .hx-caps { display: none; }
+}
+
+/* Travelling pulses along the connectors (shown only while moving) */
+.hx-pulse {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-dasharray: 9 91;
+  stroke-dashoffset: 9;
+  opacity: 0;
+  filter: drop-shadow(0 0 3px var(--accent));
+}
+
+.hx-pulse--loop { stroke-width: 2.2; }
+
+@keyframes hx-flow { from { stroke-dashoffset: 9; } to { stroke-dashoffset: -91; } }
+@keyframes hx-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes hx-breathe { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+@keyframes hx-twinkle { 0%, 100% { opacity: 0.12; } 50% { opacity: 0.7; } }
+@keyframes hx-glow { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.7; } }
+@keyframes hx-march { to { stroke-dashoffset: -200; } }
+@keyframes hx-emit { 0% { opacity: 0.7; transform: scale(0.55); } 100% { opacity: 0; transform: scale(1.5); } }
+@keyframes hx-scan { 0% { opacity: 0; transform: translateY(0); } 15% { opacity: 0.35; } 85% { opacity: 0.35; } 100% { opacity: 0; transform: translateY(26px); } }
+
+/* Hero loop: the same on the home hero and both case-page heroes (EN/DE); only with motion allowed */
+.motion-ok .hx-stage .hx-pulse { opacity: 1; animation: hx-flow 2.8s linear infinite; animation-delay: calc(var(--k, 0) * -0.45s); }
+.motion-ok .hx-stage .hx-bob { animation: hx-bob 6s ease-in-out infinite; animation-delay: calc(var(--k, 0) * -0.8s); }
+.motion-ok .hx-stage .hx-led { animation: hx-breathe 3.6s ease-in-out infinite; animation-delay: calc(var(--k, 0) * -0.6s); }
+.motion-ok .hx-stage .hx-spark { animation: hx-twinkle 4.5s ease-in-out infinite; animation-delay: calc(var(--k, 0) * -0.9s); }
+.motion-ok .hx-stage .hx-edge { animation: hx-glow 5s ease-in-out infinite; }
+.motion-ok .hx-stage .hx-mono { animation: hx-breathe 5s ease-in-out infinite; }
+.motion-ok .hx-stage .hx-orbit { animation: hx-march 14s linear infinite; }
+.motion-ok .hx-stage .hx-orbit--inner { animation-direction: reverse; }
+
+/* Pause (button or off-screen) stops only the loops; the one-off intro always finishes */
+:is(.hx-stage.is-paused, .hx-stage.is-offscreen) :is(.hx-pulse, .hx-bob, .hx-led, .hx-spark, .hx-edge, .hx-mono, .hx-orbit) {
+  animation-play-state: paused !important;
+}
+
+/* Covers move only while the card is hovered or focused; floating is driven by media.js on
+   wrappers (never on .hx-block, whose one-time grow-in must not restart) */
+.cover .hx-emits,
+.cover .hx-scanwrap { opacity: 0; transition: opacity 400ms ease; }
+.cover .hx-pulse { transition: opacity 400ms ease; }
+.motion-ok .cover .hx-pulse { animation: hx-flow 2.4s linear infinite paused; animation-delay: calc(var(--k, 0) * -0.6s); }
+.motion-ok .cover .hx-emit { opacity: 0.7; animation: hx-emit 2.4s ease-out infinite paused; }
+.motion-ok .cover .hx-emit--2 { animation-delay: -1.2s; }
+.motion-ok .cover .hx-scan { animation: hx-scan 2.6s ease-in-out infinite paused; }
+.motion-ok .card:is(:hover, :focus-within, .is-settling) .cover :is(.hx-pulse, .hx-emit, .hx-scan) { animation-play-state: running; }
+.motion-ok .card:is(:hover, :focus-within) .cover :is(.hx-pulse, .hx-emits, .hx-scanwrap) { opacity: 1; }
+
+/* Pause button: a real button outside the aria-hidden SVG, shown only when motion runs */
+.hx-stage { position: relative; }
+
+.hx-pause {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  color: var(--text);
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.hx-pause:hover,
+.hx-pause:focus-visible { opacity: 1; border-color: var(--accent); }
+.hx-pause:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.hx-pause svg { width: 14px; height: 14px; fill: currentColor; }
+.hx-pause .i-play,
+.hx-pause[aria-pressed="true"] .i-pause { display: none; }
+.hx-pause[aria-pressed="true"] .i-play { display: block; }
+.case-hero__art.hx-stage .hx-pause { right: 0; bottom: 0; }

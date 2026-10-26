@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "language": "de",
+  "entries": [
+    {
+      "id": "home",
+      "title": "Softwareprojekte & technische Entscheidungen",
+      "description": "Ich bin Schüler mit Schwerpunkt Informatik und arbeite mit Java, C#, JavaScript und TypeScript. In eigenen Projekten beschäftige ich mich mit Automatisierung, Anforderungsanalyse, Softwaretests und KI-gestützter Entwicklung.",
+      "technologies": ["Java", "C#", "JavaScript", "TypeScript", "SQL", "HTML/CSS", "Git", "Linux-CLI"],
+      "headings": [
+        { "id": "work", "title": "Ausgewählte Projekte" },
+        { "id": "about", "title": "Über mich" },
+        { "id": "technologies-about", "title": "Technologien" },
+        { "id": "contact", "title": "Kontakt" }
+      ],
+      "url": "../de/index.html"
+    },
+    {
+      "id": "digital-core",
+      "title": "Digital Core",
+      "description": "Ein plugin-basiertes System, das die Bestellabwicklung eines kleinen Onlineshops für digitale Produkte auf einem Marktplatz automatisiert: bezahlte Bestellungen, Auslieferung aus dem eigenen Lager und Einkäufe bei externen Lieferanten – mit Wiederherstellung bei verpassten Ereignissen.",
+      "technologies": ["Python", "pytest", "Telegram-Bot"],
+      "headings": [
+        { "id": "overview", "title": "Überblick" },
+        { "id": "architecture", "title": "Architektur" },
+        { "id": "technologies", "title": "Technologien" },
+        { "id": "contribution", "title": "Mein Beitrag" },
+        { "id": "results", "title": "Ergebnisse" }
+      ],
+      "url": "../de/projects/digital-core.html"
+    },
+    {
+      "id": "novaplatform",
+      "title": "NovaPlatform",
+      "description": "Ein Full-Stack-Webshop für digitale Produkte: ein Java/Spring-Boot-Backend, das eine Shop-Oberfläche in reinem JavaScript bereitstellt, Kundenkonten über Supabase, Administrationsoberflächen und E-Mail-Versand. Umgesetzt mit KI-gestützter Implementierung.",
+      "technologies": ["Java 21", "Spring Boot", "JavaScript", "Supabase", "PostgreSQL", "Docker"],
+      "headings": [
+        { "id": "overview", "title": "Überblick" },
+        { "id": "architecture", "title": "Architektur" },
+        { "id": "technologies", "title": "Technologien" },
+        { "id": "contribution", "title": "Mein Beitrag" },
+        { "id": "results", "title": "Ergebnisse" }
+      ],
+      "url": "../de/projects/novaplatform.html"
+    }
+  ]
+}
