@@ -1,0 +1,440 @@
+/* Project pages: hero, section bar, overview and facts, architecture, diagrams and Lightbox. */
+
+/* Case pages */
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 8px;
+  padding-top: 16px;
+  list-style: none;
+  font-size: 14px;
+}
+
+.breadcrumb a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.breadcrumb [aria-current="page"] {
+  color: var(--muted);
+}
+
+.breadcrumb__sep {
+  color: var(--muted);
+}
+
+.case-hero {
+  display: grid;
+  align-items: center;
+  gap: 32px;
+  padding-top: 16px;
+}
+
+@media (min-width: 1024px) {
+  .case-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
+  }
+}
+
+/* Overview: text, highlights and a project facts panel */
+
+.overview__grid {
+  display: grid;
+  gap: 32px;
+}
+
+@media (min-width: 1024px) {
+  .overview__grid {
+    grid-template-columns: minmax(0, 1fr) 300px;
+  }
+}
+
+.overview__main > p {
+  max-width: 70ch;
+}
+
+.overview__subhead {
+  margin: 32px 0 16px;
+  font-size: 20px;
+}
+
+.highlights {
+  display: grid;
+  gap: 16px;
+  list-style: none;
+}
+
+@media (min-width: 640px) {
+  .highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.highlight {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-content: start;
+  gap: 4px 14px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  transition: border-color var(--t-hover) ease, transform var(--t-hover) ease;
+}
+
+.highlight:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.highlight__icon {
+  grid-row: span 2;
+  width: 42px;
+  height: 42px;
+  padding: 9px;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  color: var(--accent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.highlight__title {
+  font-weight: 700;
+}
+
+.highlight__text {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.case-meta {
+  align-self: start;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.case-meta dl {
+  margin: 0;
+}
+
+.case-meta dt {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.case-meta dt:not(:first-child) {
+  margin-top: 14px;
+}
+
+.case-meta dd {
+  margin: 2px 0 0;
+  font-weight: 700;
+}
+
+/* Architecture: text and diagram side by side on wide screens */
+
+.split__text p {
+  max-width: 70ch;
+}
+
+@media (min-width: 1200px) {
+  .case-section--split {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 0 40px;
+    align-items: start;
+  }
+
+  .case-section--split > h2 {
+    grid-column: 1 / -1;
+  }
+
+  .case-section--split .diagram {
+    margin-top: 0;
+  }
+}
+
+.case-section--tech .tags li {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+/* My Contribution and Results as panels */
+
+.case-section--panel .panel {
+  max-width: 80ch;
+  padding: var(--card-pad);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.case-section--panel .panel p {
+  margin: 0;
+}
+
+.case-hero__summary {
+  max-width: 70ch;
+  color: var(--muted);
+  font-size: 1.06em;
+}
+
+.case-hero .tags {
+  margin-top: 16px;
+}
+
+.section-nav {
+  margin-top: 32px;
+  border-bottom: 1px solid var(--surface);
+  background: var(--bg);
+}
+
+/* Sticky below the header when JS is on; anchors land below both. */
+.js .section-nav {
+  position: sticky;
+  top: 61px;
+  z-index: 10;
+}
+
+.js main [id] {
+  scroll-margin-top: 84px;
+}
+
+.js .case-section h2 {
+  scroll-margin-top: 136px;
+}
+
+.section-nav__toggle {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+@media (max-width: 1023px) {
+  .js .section-nav {
+    margin-inline: calc(-1 * var(--gutter));
+    padding: 8px var(--gutter);
+  }
+
+  .js .section-nav__toggle {
+    display: inline-flex;
+  }
+
+  .js .section-nav:not(.is-open) ol {
+    display: none;
+  }
+
+  .js .section-nav ol {
+    flex-direction: column;
+    padding-top: 8px;
+  }
+
+  .js .section-nav li:first-child a {
+    margin-inline-start: 0;
+  }
+}
+
+.section-nav a[aria-current="true"] {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+.section-nav ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 4px;
+  list-style: none;
+}
+
+.section-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 12px;
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.section-nav li:first-child a {
+  margin-inline-start: -12px;
+}
+
+.section-nav a:hover {
+  background: var(--surface);
+  color: var(--accent);
+}
+
+.case-section {
+  padding-top: var(--section-gap);
+}
+
+.case-section > h2,
+.case-section > p,
+.case-section > .tags {
+  max-width: 70ch;
+}
+
+/* The room below the last section (so every section can become the current one) is sized by
+   navigation.js (fitLastSection), so there is no fixed full-screen gap above the footer. */
+
+/* Architecture diagrams (inline SVG, theme-aware) */
+
+.diagram {
+  max-width: 900px;
+  margin: 32px 0 0;
+  padding: var(--card-pad);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.diagram figcaption {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.diagram__open {
+  margin-top: 12px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.diagram__open:hover {
+  border-color: var(--accent);
+}
+
+.dg-box {
+  fill: var(--bg);
+  stroke: var(--border);
+  stroke-width: 1.5;
+}
+
+.dg-group {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 5;
+}
+
+.dg-chip {
+  fill: var(--surface);
+  stroke: var(--accent);
+  stroke-width: 1.2;
+}
+
+.dg-line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.dg-arrow {
+  fill: var(--accent);
+}
+
+.dg-title {
+  fill: var(--text);
+  font: 700 15px var(--font-sans);
+}
+
+.dg-text {
+  fill: var(--text);
+  font: 400 13px var(--font-sans);
+}
+
+.dg-note {
+  fill: var(--muted);
+  font: 400 12px var(--font-mono);
+}
+
+/* Lightbox */
+
+.lightbox {
+  width: min(1200px, calc(100vw - 16px));
+  height: min(90vh, 900px);
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.lightbox[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.lightbox::backdrop {
+  background: rgb(0 0 0 / 0.75);
+}
+
+.lightbox__bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.lightbox__bar .icon-btn {
+  border-color: var(--border);
+  font-size: 22px;
+  line-height: 1;
+}
+
+.lightbox__stage {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+}
+
+.lightbox__stage svg {
+  display: block;
+  max-width: none;
+  height: auto;
+}
+
+/* Case sections: spacing */
+
+.case-section p:last-child {
+  margin-bottom: 0;
+}
+
+.case-section .tags {
+  margin-bottom: 16px;
+}
