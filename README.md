@@ -1,51 +1,31 @@
 # Mykyta Semenov — Portfolio
 
-A bilingual (English / German) technical portfolio that presents two software projects, **Digital Core** and **NovaPlatform**: what they do, how they are built and what my part in them was.
+Personal technical portfolio of a Computer Science student working with Java, C#, JavaScript and TypeScript.
+It presents two of my software projects in **English and German**.
 
-Planned address (after publication with GitHub Pages from the repository root): <https://semenov-mykyta.github.io/>
+**🌐 Website: [semenov-mykyta.github.io](https://semenov-mykyta.github.io/)**
 
-## What's inside
+## Projects
 
-- **Home page:** introduction, project cards, About (technical interests and technologies) and Contact via GitHub.
-- **Case studies:** one page per project and language, with an overview, an architecture diagram, technologies, my contribution and results.
-- **Two colour themes:** Mint and Gold, switched with a smooth colour transition.
-- **Local search:** client-side search across the projects in each language, with no external service.
-- **Accessibility:**
-  - keyboard navigation, visible focus and a skip link;
-  - respects "reduced motion": animations stop and any looping animation can be paused;
-  - the pages also work without JavaScript.
+| Project | What it is |
+|---|---|
+| [Digital Core](https://semenov-mykyta.github.io/en/projects/digital-core.html) | Plugin-based automation for a digital-goods shop: event-driven order handling, supplier calls and recovery after missed events. |
+| [NovaPlatform](https://semenov-mykyta.github.io/en/projects/novaplatform.html) | Full-stack web store for digital goods with a Spring Boot backend, customer accounts, admin panels and email. |
 
-## Built with
+Each case study covers the overview, architecture, technologies, my contribution and the results.
+Both projects are private repositories, so the site describes them without publishing their code.
 
-- Plain HTML, CSS and JavaScript: no framework, no build step, no runtime dependencies.
-- Original SVG illustrations and diagrams made for this site.
-- Fonts: [Manrope](https://github.com/googlefonts/manrope) and [IBM Plex Mono](https://github.com/IBM/plex), self-hosted under the SIL Open Font License 1.1 (licence files next to the fonts).
+## About the site
 
-## Structure
+- Hand-written HTML, CSS and JavaScript: no framework and no build step, hosted on GitHub Pages.
+- English and German versions of every page.
+- Two colour themes (Mint and Gold) and a local project search.
+- Accessible: keyboard navigation, visible focus, reduced-motion support, works without JavaScript.
 
-```
-index.html                 opens the English version
-404.html
-en/ · de/                  home page and the two case studies per language
-assets/
-├── css/                   base, layout, home, case, illustrations, entry
-├── js/                    core, theme, navigation, media, search, theme start-up
-├── fonts/                 self-hosted fonts with their licence files
-└── images/
-data/                      search indexes (EN / DE)
-.nojekyll                  tells GitHub Pages to serve the files as they are
-```
+## Contact
 
-## Run locally
+[GitHub: @Semenov-Mykyta](https://github.com/Semenov-Mykyta)
 
-Any static file server works, for example Python's, started in the repository folder:
+---
 
-```bash
-python -m http.server 4173
-```
-
-Then open <http://127.0.0.1:4173/>.
-
-## Note
-
-Both projects are private repositories. The site describes them without publishing their source code.
+© 2026 Mykyta Semenov. Fonts: Manrope and IBM Plex Mono under the SIL Open Font License 1.1.
